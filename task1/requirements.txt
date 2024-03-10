@@ -1,0 +1,7 @@
+langchain_community
+langchain_together
+langchain
+langchain_core
+jq
+sentence-transformers
+chromadb
