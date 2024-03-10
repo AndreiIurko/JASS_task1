@@ -6,3 +6,4 @@ This is an AI chat application for the JASS test assignment.
 * Now it is possible to run the application: python3 task1.py
 
 Please note that the format of Json file is a little bit altered for simpler implementation. 
+File task1_tests.py contains tests for this task

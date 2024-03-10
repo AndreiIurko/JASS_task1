@@ -13,7 +13,7 @@ character_to_color = {
     " ": (255, 255, 255)
 }
 
-def create_image_from_text(file_path, output_path):
+def create_image_from_text(file_path):
     # Open the text file and read its contents without \n symbols
     with open(file_path, 'r') as file:
         lines = [line.strip('\n') for line in file.readlines()]
@@ -37,7 +37,7 @@ def create_image_from_text(file_path, output_path):
             pixels[x, y] = character_to_color[char]
 
     # Save the image
-    image.save(output_path)
+    return image
 
 if __name__ == "__main__":
     print("This program designed for converting a text matrix into image. For more details please referer to ASSIGNMENT.md")
@@ -45,7 +45,8 @@ if __name__ == "__main__":
     output_file = input("Enter the path for the output image: ")
 
     try:
-        create_image_from_text(input_file, output_file)
+        image = create_image_from_text(input_file)
+        image.save(output_path)
         print("Image created successfully!")
     except ValueError as err:
         print("Image not created due to value error")

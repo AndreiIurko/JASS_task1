@@ -72,6 +72,9 @@ rag_chain = (
     | llm
 )
 
+def get_response(question, chat_history):
+    return rag_chain.invoke({"question": question, "chat_history": chat_history})
+
 if __name__ == "__main__":
     chat_history = []
     print("Hello and welcome dear user! I am an AI travel assistant and I am happy to provide you any information" \
@@ -81,6 +84,6 @@ if __name__ == "__main__":
         question = input("User: ")
         if question == "exit":
             break
-        ai_response = rag_chain.invoke({"question": question, "chat_history": chat_history})
+        ai_response = get_response(question, chat_history)
         print(f"Assistant: {ai_response}")
         chat_history.extend([HumanMessage(content=question), ai_response])
